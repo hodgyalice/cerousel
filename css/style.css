@@ -1,3 +1,13 @@
+:target {
+  animation: highlight 1s ease;  
+  transform: translateX(20px);     
+}
+
+@keyframes highlight {
+  0% { border-left-color: red; }
+  100% { border-left-color: white; }
+}
+
 @media (min-width: 576px) {
 	.wrapperFormContacts {
 		display: flex;
@@ -273,6 +283,12 @@ a {
 	margin-right: 10px;
 }
 
+
+
+.itemNav i:active {
+	font-weight: 800;
+}
+
 .fat {
 	font-weight: 800;
 }
@@ -404,6 +420,8 @@ a {
 	height: 40px;
 	transition:  0.4s ease-out;
 	margin-left: 7px;
+	border-radius: 10px;
+
 }
 
 .wrapperMainControls button:hover {
@@ -657,7 +675,7 @@ a {
 
 /*collapse*/
 
-.buttonsCollapse a {
+.buttonsCollapse button {
 	background: #EEEEEE;
 	border-color: none;
 	border: 0px;
@@ -669,9 +687,19 @@ a {
 	text-decoration: none;
 }
 
-.buttonsCollapse a:hover {
+.buttonsCollapse button:hover {
 	color: #000;
 	text-decoration: none;
+}
+
+.buttonsCollapse button:active {
+	text-decoration: none;
+	outline: none;
+}
+
+.buttonsCollapse button:focus {
+	text-decoration: none;
+	outline: none;
 }
 
 #sectionCollapse {
@@ -723,53 +751,6 @@ a {
 	background: #45479A;
 }
 
-
-
-
-#july:not(:target) {
-    display: none;
-    transition: transform 1s ease-out;
-}
-#july:target {
-    display: block;
-    transition: transform 0.9s ease-out;
-}
-
-#june:not(:target) {
-    display: none;
-    transition: transform 0.9s ease-out;
-}
-#june:target {
-    display: block;
-    transition: transform 0.9s ease-out;
-}
-
-#may:not(:target) {
-    display: none;
-    transition: transform 0.9s ease-out;
-}
-#may:target {
-    display: block;
-    transition: transform 0.9s ease-out;
-}
-
-#april:not(:target) {
-    display: none;
-    transition: transform 0.9s ease-out;
-}
-#april:target {
-    display: block;
-    transition: transform 0.9s ease-out;
-}
-
-
-#july, #june, #may, #april {
-	transition: transform 0.9s ease-out;
-}
-
-.buttonsCollapse a {
-	transition: transform 0.9s ease-out;
-}
 
 /*collapse*/
 
@@ -834,5 +815,69 @@ a {
 	margin-left: -20px;
 }
 
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+.contentCollapse {
+	display: none;
+}
+
+.active {
+	display: block;
+}
 
 
+
+.buttonsCollapse {
+	border-bottom: 5px solid #45479A;
+}
+
+.buttonsCollapse button:hover, .buttonsCollapse button:active {
+	background: #45479A;
+	color: #fff;
+	transition: 0.5s ease-out;
+}
+
+.wrapperItemPlaces {
+	border
+}
+
+.slidesMain .form-control {
+	background: none;
+}
+
+.wrapperContacts {
+	display: flex;
+}
+
+#sectionContacts {
+	margin-top: 20px;
+	background: #252525;
+	color: #ECECEC;
+	padding-top: 30px;
+	padding-bottom: 20px;
+}
+
+
+
+.ourconatctsWrap h4 {
+	font-size: 18px;
+}
+
+.ourconatctsWrap p {
+	font-size: 15px;
+	max-width: 70%;
+} 
+
+.ourconatctsWrap hr {
+	background: #45479A;
+	width: 50%;
+}
+
+.wrapperFooter hr {
+	background: #45479A;
+	width: 20%;
+}

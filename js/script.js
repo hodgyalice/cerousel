@@ -1,13 +1,3 @@
-// span
-window.onscroll = function() {
-  var scrolled = window.pageYOffset || document.documentElement.scrollTop;
-  document.getElementsByClassName('nav').style.backgroundColor= scrolled==0?"red":"blue";
-}
-// span
-
-// slider
-
-$('.carousel').carousel()
 
 // mobile
 
@@ -77,10 +67,18 @@ function myFunction() {
 		
 	})
 
+console.log(screen.width)
 
-	function moveSliderFirst(){	
-		let result = (currentIndexFirst - 1) * 145;
-		sliderMain.style.transform = `translate(-${result}%, 0px)`;
+	function moveSliderFirst(){
+		if(screen.width < 576) {
+			var size1 = (screen.width)/156;
+			let result = (currentIndexFirst - 1) * size1;
+			sliderMain.style.transform = `translate(-${result}%, 0px)`;
+		} else if(screen.width > 576) {
+			let size = (screen.width)/8.7;
+			let result = (currentIndexFirst - 1) * size;
+			sliderMain.style.transform = `translate(-${result}%, 0px)`;
+		}
 	}
 })();
 
@@ -128,23 +126,41 @@ function createImgInModal(href) {
 
 }
 
-// gallery
-// function july() {
-// 	let julyM = document.getElementById('july');
-// 	if (julyM.style.display == "none") {
-//              julyM.style.display = "block";
-//       } 
-//          else {
-//              julyM.style.display = "none";
-// }
+const anchors = document.querySelectorAll('a[href*="#"]')
 
-// (function () {
-// 	let julyBut = document.getElementById('julyBut');
-//     let julyM = document.getElementById('july');
-//     if (julyM.style.display == "none") {
-//              julyM.style.display = "block";
-//       } 
-//          else {
-//              julyM.style.display = "none";
-// 	}
-// }());
+for (let anchor of anchors) {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault()
+    
+    const blockID = anchor.getAttribute('href').substr(1)
+    
+    document.getElementById(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  })
+}
+
+
+const tabsWrapper = document.querySelector(".buttonsCollapse")
+const tabs = tabsWrapper.querySelectorAll(".tab");
+const tabsPanel = document.querySelectorAll(".contentCollapse");
+
+tabsWrapper.addEventListener('click', (e) => {
+	let target = e.target;
+	if(e.target.classList.contains('tab')) {
+		for(let i=0; i<tabs.length; i++) {
+			tabs[i].classList.remove('active');
+		}
+		target.classList.add('active');
+		for(let i = 0; i<tabsPanel.length; i++) {
+			tabsPanel[i].classList.remove('active');
+			if(tabsPanel[i].dataset.index == target.dataset.index) {
+				tabsPanel[i].classList.add('active')
+			}
+		}
+		
+	}
+
+
+})
