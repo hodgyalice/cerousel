@@ -70,15 +70,18 @@ function myFunction() {
 console.log(screen.width)
 
 	function moveSliderFirst(){
-		if(screen.width < 576) {
-			var size1 = (screen.width)/156;
-			let result = (currentIndexFirst - 1) * size1;
+		// if(screen.width < 576) {
+		// 	var size1 = (screen.width)/156;
+		// 	let result = (currentIndexFirst - 1) * size1;
+		// 	sliderMain.style.transform = `translate(-${result}%, 0px)`;
+		// } else if(screen.width > 576) {
+		// 	let size = (screen.width)/8.7;
+		// 	let result = (currentIndexFirst - 1) * size;
+		// 	sliderMain.style.transform = `translate(-${result}%, 0px)`;
+		// }
+
+		let result = (currentIndexFirst - 1) * 100;
 			sliderMain.style.transform = `translate(-${result}%, 0px)`;
-		} else if(screen.width > 576) {
-			let size = (screen.width)/8.7;
-			let result = (currentIndexFirst - 1) * size;
-			sliderMain.style.transform = `translate(-${result}%, 0px)`;
-		}
 	}
 })();
 

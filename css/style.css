@@ -50,13 +50,7 @@
 	top: 5%;
 	}
 
-	.slidesMain {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	}
+	
 
 	.wrapperTitlePlaces {
 	text-align: center;
@@ -131,6 +125,14 @@
 		width: 25%;
 	}
 
+	.slidesMain {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	}
+
 }
 
 @media (min-width: 768px) {
@@ -151,8 +153,8 @@
 	}
 
 	.slidesMain {
-	margin-top: 20%;
-	margin-left: 45%;
+	/*margin-top: 20%;
+	margin-left: 45%;*/
 	}
 
 	.buttonsCollapse {
@@ -162,6 +164,10 @@
 	.buttonsCollapse button{
 		width: 25%;
 	}
+
+		.sliderMain {
+	margin-top: 20%;
+}
 
 }
 
@@ -175,7 +181,7 @@
 	}
 
 	.wrapperMainControls {
-	left: 90%;
+	left: 85%;
 	top: 5%;
 	}
 	.showSlide {
@@ -244,16 +250,26 @@ a {
 
 
 .mainSection {
-	min-height: 600px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;	
+	min-height: 100vh;
 	animation: 96ms linear forwards fade-in-main;
 }
 
 .logoWrapper {
-	background: #444893;
 	padding: 10px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	 background-image: linear-gradient(45deg, #6ab1d7 0%, #33d9de 50%, #002878 100%);
+    background-position: 100% 0;
+    background-size: 200% 200%;
+    box-shadow: 0 16px 32px 0 rgba(0, 40, 120, .35);
+    transition: .5s;
+    border-color: #33d9de;
 }
 
 .logoWrapper img{
@@ -286,6 +302,18 @@ a {
 
 
 .itemNav i:active {
+	font-weight: 800;
+}
+
+.itemNav i:hover {
+	font-weight: 800;
+}
+
+.nav>a:active i {
+	font-weight: 800;
+}
+
+.nav>a:hover i {
 	font-weight: 800;
 }
 
@@ -340,6 +368,12 @@ a {
   font-size: 17px;
   display: block;
 }
+.btnShine {
+	font-weight: 900;
+}
+.btnShine:active, .btnShine:focus {
+  outline: none;
+}
 
 .topnav a.icon {
    background: #444893;
@@ -372,7 +406,6 @@ a {
 	max-width: 1200px;
     overflow: hidden;
 }
-
 
 
 
@@ -446,7 +479,7 @@ a {
 	background-image: linear-gradient(to top right, rgba(13, 13, 13, 0.35), rgba(10, 10, 10, 0.36), rgba(8, 8, 8, 0.37), rgba(5, 5, 5, 0.37), rgba(3, 3, 3, 0.38), rgba(0, 0, 0, 0.39), rgba(0, 0, 0, 0.37), rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.34), rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.31), rgba(0, 0, 0, 0.29)),url('../image/bg.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
-	min-height: 620px;
+	/*min-height: 620px;*/
 }
 
 .wrapperTitlePlaces h3 {
@@ -464,7 +497,7 @@ a {
 }
 
 .wrapperTitlePlaces h3 span {
-	color: #434997;
+	color: #33d9de;
 }
 
 .wrapperTitlePlaces p {
@@ -575,7 +608,29 @@ a {
     overflow: hidden;
 }
 
+.btnShine{
+	text-decoration: none;
+    outline: none;
+    display: inline-block;
+    background-image: linear-gradient(45deg, #6ab1d7 0%, #33d9de 50%, #002878 100%);
+    background-position: 100% 0;
+    background-size: 200% 200%;
+    color: white;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 5px 5px;
+    font-size:15px;
+    font-weight: 500;
+    box-shadow: 0 16px 32px 0 rgba(0, 40, 120, .35);
+    transition: .5s;
+    border-color: #33d9de;
+}
 
+
+.btnShine:hover {
+  box-shadow: 0 0 0 0 rgba(0,40,120,0);
+  background-position: 0 0;
+}
 
 .gallery {
 	padding: 15px 0;
@@ -643,22 +698,13 @@ a {
 }
 
 .wrapperTitlePresentation h3 span {
-	color: #434997;
+	color: #33d9de;
 }
 
 .blondeText {
 	color: #7d7d7d;
 }
 
-.wrapperTitlePresentation  button {
-	background: #45479A;
-	border-radius: 0;
-	border-color: #45479A;
-}
-
-.wrapperTitlePresentation  button:hover {
-	background: #45479A;
-}
 
 
 #embed-responsive-item {
@@ -690,16 +736,27 @@ a {
 .buttonsCollapse button:hover {
 	color: #000;
 	text-decoration: none;
+    background-image: linear-gradient(45deg, #6ab1d7 0%, #33d9de 50%, #002878 100%);
+    background-position: 100% 0;
+    background-size: 200% 200%;
+    color: white;
+    box-shadow: 0 16px 32px 0 rgba(0, 40, 120, .35);
+    transition: .5s;
+    border-color: #33d9de;
 }
 
 .buttonsCollapse button:active {
 	text-decoration: none;
 	outline: none;
+	background: #33d9de;
+	transition: 1s;
 }
 
 .buttonsCollapse button:focus {
 	text-decoration: none;
 	outline: none;
+	background: #33d9de;
+	transition: 1s;
 }
 
 #sectionCollapse {
@@ -736,20 +793,6 @@ a {
 	font-size: 20px;
 }
 
-.contentTextCollapse button {
-	background: #45479A;
-	border-radius: 0;
-	border-color: #45479A;
-	width: 140px;
-	height: 30px;
-	font-size: 14px;
-	font-weight: 600;
-	border-radius: 5px;
-}
-
-.contentTextCollapse button:hover {
-	background: #45479A;
-}
 
 
 /*collapse*/
@@ -797,12 +840,8 @@ a {
 
 .wrapperButtonForm button{
 	width: 99%;
-	background: #45479A;
 }
 
-.wrapperButtonForm button:hover{
-	background: #45479A;
-}
 
 .wrapperFooter {
 	padding: 20px 0;
@@ -832,14 +871,9 @@ a {
 
 
 .buttonsCollapse {
-	border-bottom: 5px solid #45479A;
+	border-bottom: 5px solid #33d9de;
 }
 
-.buttonsCollapse button:hover, .buttonsCollapse button:active {
-	background: #45479A;
-	color: #fff;
-	transition: 0.5s ease-out;
-}
 
 .wrapperItemPlaces {
 	border
